@@ -42,16 +42,17 @@ const Menu = ({ menu }) => {
   };
 
   return (
-    <nav id="main-nav-wrap">
-      <ul class="main-navigation sf-menu">
-        {renderMenu(menu)}
-        {token && (
-          <a href="#" onClick={logout}>
-            Logout
-          </a>
-        )}
-      </ul>
-    </nav>
+    <></>
+    // <nav id="main-nav-wrap">
+    //   <ul class="main-navigation sf-menu">
+    //     {renderMenu(menu)}
+    //     {token && (
+    //       <a href="#" onClick={logout}>
+    //         Logout
+    //       </a>
+    //     )}
+    //   </ul>
+    // </nav>
   );
 };
 
