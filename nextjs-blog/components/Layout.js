@@ -7,9 +7,7 @@ const Layout = ({ children }) => {
     <>
       <Head>
         <title>Long Vu's Portfolio</title>
-
         <meta charSet="utf-8" />
-
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="Long Vu cv/resume." />
         <meta
@@ -21,7 +19,6 @@ const Layout = ({ children }) => {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="shortcut icon" href="/apple-icon.png" />
         <link rel="shortcut icon" sizes="72x72" href="/apple-icon-72x72.png" />
@@ -30,7 +27,6 @@ const Layout = ({ children }) => {
           sizes="114x114"
           href="/apple-icon-114x114.png"
         />
-
         <link href="/css/css" rel="stylesheet" />
         <link rel="stylesheet" href="/css/font-awesome.min.css" />
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -38,11 +34,9 @@ const Layout = ({ children }) => {
         <link rel="stylesheet" href="/css/owl.css" />
         <link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
         <link rel="stylesheet" href="/css/mh-slider.css" />
-
         <link rel="stylesheet" href="/css/styles.css" />
         <link rel="stylesheet" href="/css/responsive.css" />
         <link rel="stylesheet" href="/css/defauld.css" title="defauld" />
-
         <script src="/js/common.js"></script>
         <script src="/js/util.js"></script>
       </Head>
