@@ -16,18 +16,18 @@ const ListPosts = ({ posts }) => {
             key={post.href}
             class={`brick entry animate-this${formatClass}`}
           >
-            <div class="entry-thumb">
+            <div className="entry-thumb">
               <Link href={`/blog/${post.href}`}>
-                <a class="thumb-link">
+                <a className="thumb-link">
                   <img src={post.thumb} alt="building" layout="fill" />
                 </a>
               </Link>
             </div>
 
-            <div class="entry-text">
-              <div class="entry-header">
-                <div class="entry-meta">
-                  <span class="cat-links">
+            <div className="entry-text">
+              <div className="entry-header">
+                <div className="entry-meta">
+                  <span className="cat-links">
                     {post.categories.map((cat) => {
                       return (
                         <Link href={cat.href}>
@@ -38,13 +38,13 @@ const ListPosts = ({ posts }) => {
                   </span>
                 </div>
 
-                <h1 class="entry-title">
+                <h1 className="entry-title">
                   <Link href={`/blog/${post.href}`}>
                     <a>{post.title}</a>
                   </Link>
                 </h1>
               </div>
-              <div class="entry-excerpt">{post.content}</div>
+              <div className="entry-excerpt">{post.content}</div>
             </div>
           </article>
         );

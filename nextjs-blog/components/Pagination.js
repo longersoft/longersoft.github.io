@@ -2,7 +2,7 @@ import React from "react";
 
 const Pagination = ({ page, totalPage, onPageClick }) => {
   return (
-    <nav class="pagination">
+    <nav className="pagination">
       <span
         onClick={() => onPageClick(page - 1)}
         class={`page-numbers prev${page === 1 ? " inactive" : ""}`}

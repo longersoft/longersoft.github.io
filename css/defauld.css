@@ -1,0 +1,26 @@
+.cs_style1 {
+  transform: translate3d(-6720px, 0px, 0px);
+  transition: all 0s ease 0s;
+  width: 11760px;
+}
+.cs_style2 {
+  width: 1680px;
+  margin-right: 0px;
+}
+.cs_style3 {
+  width: 1110px;
+  margin-right: 0px;
+}
+.cs_style4 {
+  width: 433px;
+  margin-right: 0px;
+}
+.cs_style5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0px;
+  margin: 0px;
+  transform: translate(-50%, -50%);
+  color: rgb(85, 85, 85);
+}

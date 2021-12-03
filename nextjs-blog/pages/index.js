@@ -1,55 +1,37 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
+// import Loader from "../components/Loader";
+import HomeSlider from "../components/HomeSlider";
+// import About from "../components/About";
+// import Services from "../components/Services";
+// import Features from "../components/Features";
+// import Skills from "../components/Skills";
+// import Experiences from "../components/Experiences";
+// import Portfolio from "../components/Portfolio";
+// import ContactText from "../components/ContactText";
+// import Pricing from "../components/Pricing";
+// import Blog from "../components/Blog";
+// import Testimonial from "../components/Testimonial";
+// import ContactForm from "../components/ContactForm";
 
 export default function Home() {
   return (
-    <div className="container">
+    <Layout>
       <Head>
         <title>Long Vu's Portfolio</title>
       </Head>
 
-      <Layout>
-        Index
-        {/* <main>
-          <h1 className="title">
-            Welcome tos <a href="https://nextjs.org">Next.js!</a>
-          </h1>
-
-          <p className="description">
-            Get started by editing <code>pages/index.js</code>
-          </p>
-
-          <div className="grid">
-            <a href="https://nextjs.org/docs" className="card">
-              <h3>Documentation &rarr;</h3>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
-
-            <a href="https://nextjs.org/learn" className="card">
-              <h3>Learn &rarr;</h3>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
-
-            <a
-              href="https://github.com/vercel/next.js/tree/master/examples"
-              className="card"
-            >
-              <h3>Examples &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-
-            <a
-              href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className="card"
-            >
-              <h3>Deploy &rarr;</h3>
-              <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
-            </a>
-          </div>
-        </main> */}
-      </Layout>
-    </div>
+      <HomeSlider />
+      {/* <About /> */}
+      {/* <Services /> */}
+      {/* <Features /> */}
+      {/* <Skills /> */}
+      {/* <Experiences /> */}
+      {/* <Portfolio /> */}
+      {/* <ContactText /> */}
+      {/* <Pricing /> */}
+      {/* <Blog /> */}
+      {/* <Testimonial /> */}
+    </Layout>
   );
 }
