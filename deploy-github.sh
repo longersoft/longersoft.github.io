@@ -28,7 +28,7 @@ wait
 for FILE in $(ls $WORK_DIR/*.html); do
   echo $FILE
 
-  sed -ie 's,/_next/,https://raw.githubusercontent.com/longersoft/longersoft.github.io/master/next/,g' $FILE
+  sed -i '' 's,/_next/,https://raw.githubusercontent.com/longersoft/longersoft.github.io/master/next/,g' $FILE
 
   # OR:
   # search='\/_next\/'
