@@ -70,7 +70,7 @@ const HomeSlider = () => {
                     data-wow-delay="0.4s"
                   >
                     <i className="fa fa-envelope"></i>
-                    <a href="mailto:">getemail@email.com</a>
+                    <a href="mailto:">longersoft@gmail.com</a>
                   </li>
                   <li
                     className="wow fadeInUp"
@@ -78,7 +78,7 @@ const HomeSlider = () => {
                     data-wow-delay="0.5s"
                   >
                     <i className="fa fa-phone"></i>
-                    <a href="callto:">+12 986 987 7867</a>
+                    <a href="callto:">+84 909901985</a>
                   </li>
                   <li
                     className="wow fadeInUp"
@@ -86,7 +86,7 @@ const HomeSlider = () => {
                     data-wow-delay="0.6s"
                   >
                     <i className="fa fa-map-marker"></i>
-                    <address>37, Pollsatnd, New York, United State</address>
+                    <address>HCM, Vietnam</address>
                   </li>
                 </ul>
 
@@ -96,22 +96,22 @@ const HomeSlider = () => {
                   data-wow-delay="0.7s"
                 >
                   <li>
-                    <a href="">
+                    <a target="_blank" href="https://facebook.com/longersoft">
                       <i className="fa fa-facebook"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a target="_blank" href="https://tweeter.com/longersoft">
                       <i className="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a target="_blank" href="https://github.com/longersoft">
                       <i className="fa fa-github"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a target="_blank" href="https://linkedin.com/longersoft">
                       <i className="fa fa-dribbble"></i>
                     </a>
                   </li>
