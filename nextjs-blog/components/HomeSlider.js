@@ -6,7 +6,10 @@ const HomeSlider = () => {
       className="mh-home image-bg header-slider header-slider-preloader"
       id="header-slider"
     >
-      <div className="animation-slides owl-carousel owl-theme" id="animation-slide">
+      <div
+        className="animation-slides owl-carousel owl-theme"
+        id="animation-slide"
+      >
         <div className="item">
           <div
             style={{
@@ -50,7 +53,7 @@ const HomeSlider = () => {
                   data-wow-duration="0.8s"
                   data-wow-delay="0.2s"
                 >
-                  Alex Johnson
+                  Long Vu
                 </h2>
                 <h4
                   className="wow fadeInUp"

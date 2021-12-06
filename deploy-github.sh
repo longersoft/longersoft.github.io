@@ -13,14 +13,12 @@ echo $WORK_DIR
 
 rm -rf next
 mv _next next
-rm -f home.html blog.html
 
 # Recursive
 # find $WORK_DIR -name '*.html'
 
 for FILE in $(ls $WORK_DIR/*.html); do
   echo $FILE
-  # FILE='/Volumes/DATA/Projects/mine/nextjs/longersoft.github.io/index.html'
 
   sed -i -e 's,/_next/,https://raw.githubusercontent.com/longersoft/longersoft.github.io/master/next/,g' $FILE
 
@@ -32,5 +30,7 @@ for FILE in $(ls $WORK_DIR/*.html); do
   # OR:
   # sed -i -e 's/\/_next\//https:\/\/raw.githubusercontent.com\/longersoft\/longersoft.github.io\/master\/next\//g' $FILE
 done
+
+rm -f home.html blog.html
 
 git add -A && git commit -m 'update site' && git push
