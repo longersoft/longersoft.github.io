@@ -60,7 +60,7 @@ const HomeSlider = () => {
                   data-wow-duration="0.8s"
                   data-wow-delay="0.3s"
                 >
-                  Product Designer
+                  Fullstack Developer
                 </h4>
 
                 <ul>
