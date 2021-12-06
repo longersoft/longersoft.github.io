@@ -23,11 +23,12 @@ rm -f home.html blog.html
 # Recursive
 # find $WORK_DIR -name '*.html'
 
+wait
 # Replace static paths in html files
 for FILE in $(ls $WORK_DIR/*.html); do
   echo $FILE
 
-  sed -i 's,/_next/,https://raw.githubusercontent.com/longersoft/longersoft.github.io/master/next/,g' $FILE
+  sed -ie 's,/_next/,https://raw.githubusercontent.com/longersoft/longersoft.github.io/master/next/,g' $FILE
 
   # OR:
   # search='\/_next\/'
