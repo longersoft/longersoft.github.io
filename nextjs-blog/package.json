@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o build/ && cp -rf build/* ../ && git add -A && git commit -m 'update site' && git push",
+    "build": "next build && next export -o build/ && sh ../deploy-github.sh",
     "start": "next start"
   },
   "dependencies": {
