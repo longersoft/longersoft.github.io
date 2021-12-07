@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_5dllf9d",
+        "template_dmiou88",
+        form.current,
+        "user_OvMVFw3Soo9bSlHM0NqAU"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <div className="row section-separator">
       <div
@@ -28,8 +51,8 @@ const ContactForm = () => {
                   <div className="each-info media-body">
                     <h4>Address</h4>
                     <address>
-                      5th Avenue, 34th floor, <br />
-                      New york
+                      HCM City, <br />
+                      Vietnam
                     </address>
                   </div>
                 </div>
@@ -45,9 +68,13 @@ const ContactForm = () => {
                   </div>
                   <div className="each-info media-body">
                     <h4>Email</h4>
-                    <a href="mailto:yourmail@email.com">yourmail@email.com</a>
+                    <a href="mailto:longersoft@gmail.com">
+                      longersoft@gmail.com
+                    </a>
                     <br />
-                    <a href="mailto:yourmail@email.com">yourmail@email.com</a>
+                    <a href="mailto:long.vu0104@gmail.com">
+                      long.vu0104@gmail.com
+                    </a>
                   </div>
                 </div>
               </div>
@@ -62,9 +89,7 @@ const ContactForm = () => {
                   </div>
                   <div className="each-info media-body">
                     <h4>Phone</h4>
-                    <a href="callto:(880)-8976-987">(880)-8976-987</a>
-                    <br />
-                    <a href="callto:(880)-8976-987">(880)-8976-987</a>
+                    <a href="callto:(880)-8976-987">(84) 90-990-1985</a>
                   </div>
                 </div>
               </div>
@@ -78,6 +103,8 @@ const ContactForm = () => {
                 id="contactForm"
                 className="single-form quate-form wow fadeInUp"
                 data-toggle="validator"
+                ref={form}
+                onSubmit={sendEmail}
               >
                 <div id="msgSubmit" className="h3 text-center hidden"></div>
                 <div className="row">
@@ -85,7 +112,7 @@ const ContactForm = () => {
                     <input
                       name="name"
                       className="contact-name form-control"
-                      id="name"
+                      id="user_name"
                       type="text"
                       placeholder="First Name"
                       required
@@ -105,9 +132,9 @@ const ContactForm = () => {
 
                   <div className="col-sm-12">
                     <input
-                      name="name"
+                      name="user_email"
                       className="contact-subject form-control"
-                      id="email"
+                      id="user_email"
                       type="email"
                       placeholder="Your Email"
                       required
@@ -118,6 +145,7 @@ const ContactForm = () => {
                     <textarea
                       className="contact-message"
                       id="message"
+                      name="message"
                       rows="6"
                       placeholder="Your Message"
                       required

@@ -393,20 +393,23 @@
     });
 
   function submitForm() {
-    var name = $("#name").val();
-    var email = $("#email").val();
+    var name = $("#user_name").val();
+    var email = $("#user_email").val();
     var message = $("#message").val();
     $.ajax({
       type: "POST",
-      url: "process.php",
+      url: "/api/sendmail",
       data: "name=" + name + "&email=" + email + "&message=" + message,
-      success: function (text) {
-        if (text == "success") {
+      success: function (data) {
+        if (data.text == "success") {
           formSuccess();
         } else {
           formError();
-          submitMSG(false, text);
+          submitMSG(false, data.text);
         }
+      },
+      error: function (error) {
+        console.log("error", error);
       },
     });
   }
