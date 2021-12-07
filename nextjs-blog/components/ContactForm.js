@@ -4,6 +4,30 @@ import emailjs from "emailjs-com";
 const ContactForm = () => {
   const form = useRef();
 
+  const formSuccess = () => {
+    document.getElementById("create-course-form").reset();
+    submitMSG(true, "Message Sent!");
+  };
+  const formError = () => {
+    $("#contactForm")
+      .removeClass()
+      .addClass("shake animated")
+      .one(
+        "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
+        function () {
+          $(this).removeClass();
+        }
+      );
+  };
+  const submitMSG = (valid, msg) => {
+    if (valid) {
+      var msgClasses = "h3 text-center fadeInUp animated text-success";
+    } else {
+      var msgClasses = "h3 text-center shake animated text-danger";
+    }
+    $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -17,9 +41,12 @@ const ContactForm = () => {
       .then(
         (result) => {
           console.log(result.text);
+          formSuccess();
         },
         (error) => {
           console.log(error.text);
+          formError();
+          submitMSG(false, "Something went wrong, please try again!");
         }
       );
   };

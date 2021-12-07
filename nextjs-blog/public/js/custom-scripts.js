@@ -393,11 +393,12 @@
     });
 
   function submitForm() {
+    return true; //stop use this
     var name = $("#user_name").val();
     var email = $("#user_email").val();
     var message = $("#message").val();
     $.ajax({
-      type: "GET",
+      type: "POST",
       url: "/api/sendmail",
       data: "name=" + name + "&email=" + email + "&message=" + message,
       success: function (data) {
