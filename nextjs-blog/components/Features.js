@@ -83,7 +83,7 @@ const Features = () => {
                                 the template very easily.
                               </p>
                               <a
-                                href="http://cvresumetemplate.com/maha-personal-cv-resume-html-template/home-slider.html"
+                                href="#mh-service"
                                 className="btn btn-fill wow fadeInUp cs_style7"
                                 data-wow-duration="0.8s"
                                 data-wow-delay="0.7s"
@@ -270,7 +270,7 @@ const Features = () => {
                                 the template very easily.
                               </p>
                               <a
-                                href="http://cvresumetemplate.com/maha-personal-cv-resume-html-template/home-slider.html"
+                                href="#mh-service"
                                 className="btn btn-fill wow fadeInUp cs_style7"
                                 data-wow-duration="0.8s"
                                 data-wow-delay="0.7s"

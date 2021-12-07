@@ -21,9 +21,12 @@ const Services = () => {
               <i className="fa fa-bullseye purple-color"></i>
               <h3>UI Design</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat.
+                User interface (UI) design is the process designers use to build
+                interfaces in software or computerized devices, focusing on
+                looks or style. Designers aim to create interfaces which users
+                find easy to use and pleasurable. UI design refers to graphical
+                user interfaces and other forms—e.g., voice-controlled
+                interfaces.
               </p>
             </div>
           </div>
@@ -36,9 +39,9 @@ const Services = () => {
               <i className="fa fa-code iron-color"></i>
               <h3>Web Development</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat.
+                Every Web Developer must have a basic understanding of HTML,
+                CSS, and JavaScript. Responsive Web Design is used in all types
+                of modern web development
               </p>
             </div>
           </div>
@@ -51,9 +54,12 @@ const Services = () => {
               <i className="fa fa-object-ungroup sky-color"></i>
               <h3>App Development</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat.
+                App Development refers to the creation of computer applications
+                for use on mobile devices such as tablets, smartphones and smart
+                watches. Mobile device features such as cameras, motion and
+                location awareness can be used to create unique and inventive
+                mobile-only applications for things such as taxi and bike
+                sharing.
               </p>
             </div>
           </div>

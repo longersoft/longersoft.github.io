@@ -28,9 +28,9 @@ const About = () => {
                 data-wow-duration="0.8s"
                 data-wow-delay="0.2s"
               >
-                Hello, I’m a Patrick, web-developer based on Paris. I have rich
-                experience in web site design & building and customization. Also
-                I am good at
+                Hello, I’m a Long Vu, web-developer based on HCM City. I have
+                rich experience in web site design & building and customization.
+                Also I am good at
               </p>
               <div
                 className="mh-about-tag wow fadeInUp"
@@ -54,10 +54,16 @@ const About = () => {
                     <span>wordpress</span>
                   </li>
                   <li>
+                    <span>Symfony</span>
+                  </li>
+                  <li>
                     <span>React</span>
                   </li>
                   <li>
                     <span>Javascript</span>
+                  </li>
+                  <li>
+                    <span>Python</span>
                   </li>
                 </ul>
               </div>
@@ -68,7 +74,7 @@ const About = () => {
                 data-wow-delay="0.4s"
                 target="_blank"
               >
-                Downlaod CV <i className="fa fa-download"></i>
+                Download CV <i className="fa fa-download"></i>
               </a>
             </div>
           </div>

@@ -19,9 +19,8 @@ const ContactText = () => {
                 data-wow-duration="0.8s"
                 data-wow-delay="0.4s"
               >
-                Duis autem vel eum iriure dolor in hendrerit in vulputate velit
-                esse molestie consequat. Mirum est notare quam littera gothica.
-                quam nunc putamus parum claram,
+                If you're interested, please email me back with your company
+                name, contact name, and email address.
               </p>
               <a
                 href="#mh-contact"

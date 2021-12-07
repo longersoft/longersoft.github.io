@@ -22,14 +22,14 @@ export default function Home() {
       <HomeSlider />
       <About />
       <Services />
-      <Features />
+      {/* <Features /> */}
       <Skills />
-      <Experiences />
-      <Portfolio />
+      {/* <Experiences /> */}
+      {/* <Portfolio /> */}
       <ContactText />
-      <Pricing />
-      <Blog />
-      <Testimonial />
+      {/* <Pricing /> */}
+      {/* <Blog /> */}
+      {/* <Testimonial /> */}
     </Layout>
   );
 }

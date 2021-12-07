@@ -29,30 +29,26 @@ const ContactForm = () => {
   };
 
   const sendEmail = (e) => {
-    console.log("sendEmail");
     e.preventDefault();
-    console.log("sendEmail2");
 
-    // emailjs
-    //   .sendForm(
-    //     "service_5dllf9d",
-    //     "template_dmiou88",
-    //     form.current,
-    //     "user_OvMVFw3Soo9bSlHM0NqAU"
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log("sendEmail2->then->result");
-    //       console.log(result.text);
-    //       formSuccess();
-    //     },
-    //     (error) => {
-    //       console.log("sendEmail2->then->error");
-    //       console.log(error.text);
-    //       formError();
-    //       submitMSG(false, "Something went wrong, please try again!");
-    //     }
-    //   );
+    emailjs
+      .sendForm(
+        "service_5dllf9d",
+        "template_dmiou88",
+        form.current,
+        "user_OvMVFw3Soo9bSlHM0NqAU"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          formSuccess();
+        },
+        (error) => {
+          console.log(error.text);
+          formError();
+          submitMSG(false, "Something went wrong, please try again!");
+        }
+      );
   };
 
   return (
