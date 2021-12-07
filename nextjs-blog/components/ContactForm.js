@@ -144,28 +144,28 @@ const ContactForm = () => {
               <div className="row">
                 <div className="col-sm-6">
                   <div className="text-left text-xs-center">
-                    <p>All right reserved Siful Islam @ 2018</p>
+                    <p>All right reserved Long Vu @2021</p>
                   </div>
                 </div>
                 <div className="col-sm-6">
                   <ul className="social-icon">
                     <li>
-                      <a href="">
+                      <a target="_blank" href="https://facebook.com/longersoft">
                         <i className="fa fa-facebook"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="">
+                      <a target="_blank" href="https://twitter.com/longersoft">
                         <i className="fa fa-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="">
+                      <a target="_blank" href="https://github.com/longersoft">
                         <i className="fa fa-github"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="">
+                      <a target="_blank" href="https://linkedin.com/longersoft">
                         <i className="fa fa-dribbble"></i>
                       </a>
                     </li>

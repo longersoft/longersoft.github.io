@@ -101,7 +101,7 @@ const HomeSlider = () => {
                     </a>
                   </li>
                   <li>
-                    <a target="_blank" href="https://tweeter.com/longersoft">
+                    <a target="_blank" href="https://twitter.com/longersoft">
                       <i className="fa fa-twitter"></i>
                     </a>
                   </li>
