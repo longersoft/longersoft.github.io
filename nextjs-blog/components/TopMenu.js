@@ -27,7 +27,7 @@ const TopMenu = () => {
             <ul className="navbar-nav mr-0 ml-auto">
               <li className="nav-item active">
                 {/* #mh-home */}
-                <a className="nav-link" href="#mh-about">
+                <a className="nav-link" href="#mh-home">
                   Home
                 </a>
               </li>
