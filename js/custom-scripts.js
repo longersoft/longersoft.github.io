@@ -387,9 +387,8 @@
         submitMSG(false, "Did you fill in the form properly?");
       } else {
         // everything looks good!
-        // stop using this
-        // event.preventDefault();
-        // submitForm();
+        event.preventDefault();
+        // submitForm(); // stop using this
       }
     });
 
