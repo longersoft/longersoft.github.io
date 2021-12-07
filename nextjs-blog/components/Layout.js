@@ -1,6 +1,8 @@
 import React from "react";
 import Head from "next/head";
+import Loader from "../components/Loader";
 import TopMenu from "../components/TopMenu";
+import ContactForm from "../components/ContactForm";
 
 const Layout = ({ children }) => {
   return (
@@ -41,7 +43,7 @@ const Layout = ({ children }) => {
         <script src="/js/util.js"></script>
       </Head>
 
-      {/* <Loader /> */}
+      <Loader />
       <header
         className="black-bg mh-header mssh-fixed-nav nav-scroll mh-xs-mobile-nav"
         id="mh-header"
@@ -52,7 +54,9 @@ const Layout = ({ children }) => {
       {children}
 
       <footer className="mh-footer mh-footer-3" id="mh-contact">
-        <div className="container-fluid">{/* <ContactForm /> */}</div>
+        <div className="container-fluid">
+          <ContactForm />
+        </div>
       </footer>
       <script src="/js/jquery.min.js"></script>
       <script src="/js/popper.min.js"></script>

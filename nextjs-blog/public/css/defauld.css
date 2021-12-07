@@ -24,3 +24,19 @@
   transform: translate(-50%, -50%);
   color: rgb(85, 85, 85);
 }
+.cs_style6 {
+  transform: translate3d(0px, 0px, 0px);
+  transition: all 0s ease 0s;
+  width: 3330px;
+}
+.cs_style7 {
+  visibility: hidden;
+  animation-duration: 0.8s;
+  animation-delay: 0.2s;
+  animation-name: none;
+}
+.cs_style8 {
+  transform: translate3d(-866px, 0px, 0px);
+  transition: all 0s ease 0s;
+  width: 3031px;
+}
