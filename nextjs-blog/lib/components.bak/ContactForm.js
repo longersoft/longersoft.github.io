@@ -1,59 +1,59 @@
 import React, { useRef } from "react";
-import emailjs from "emailjs-com";
+import handleSubmitFormApi from "../lib/handleSubmitFormApi";
+import { isValidEmail } from "../lib/validator";
 
 const ContactForm = () => {
   const form = useRef();
+  const [firstName, setFirstName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [submitStatus, setSubmitStatus] = React.useState(undefined);
+  const [submitMessage, setSubmitMessage] = React.useState("");
+
+  const resetForm = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
+  };
 
   const formSuccess = () => {
-    $("#contactForm")[0].reset();
-    submitMSG(true, "Message Sent!");
+    setSubmitStatus("success");
+    setSubmitMessage("Message Sent!");
   };
+
   const formError = () => {
-    $("#contactForm")
-      .removeClass()
-      .addClass("shake animated")
-      .one(
-        "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
-        function () {
-          $(this).removeClass();
-        }
-      );
-  };
-  const submitMSG = (valid, msg) => {
-    if (valid) {
-      var msgClasses = "h3 text-center fadeInUp animated text-success";
-    } else {
-      var msgClasses = "h3 text-center shake animated text-danger";
-    }
-    $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+    setSubmitStatus("error");
+    setSubmitMessage("Something went wrong, please try again!");
   };
 
-  const sendEmail = (e) => {
-    console.log("sendEmail");
+  const sendEmail = async (e) => {
     e.preventDefault();
-    console.log("sendEmail2");
 
-    // emailjs
-    //   .sendForm(
-    //     "service_5dllf9d",
-    //     "template_dmiou88",
-    //     form.current,
-    //     "user_OvMVFw3Soo9bSlHM0NqAU"
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log("sendEmail2->then->result");
-    //       console.log(result.text);
-    //       formSuccess();
-    //     },
-    //     (error) => {
-    //       console.log("sendEmail2->then->error");
-    //       console.log(error.text);
-    //       formError();
-    //       submitMSG(false, "Something went wrong, please try again!");
-    //     }
-    //   );
+    const submit = await handleSubmitFormApi({
+      firstName,
+      lastName,
+      email,
+      message,
+    });
+
+    if (submit.success) {
+      formSuccess();
+      resetForm();
+    } else {
+      formError();
+    }
   };
+
+  let formClass = "";
+  let msgClass = "";
+  if (submitStatus === "success") {
+    msgClass = " fadeInUp animated text-success";
+  } else if (submitStatus === "error") {
+    formClass = " error";
+    msgClass = " shake animated text-danger";
+  }
 
   return (
     <div className="row section-separator">
@@ -132,12 +132,15 @@ const ContactForm = () => {
             >
               <form
                 id="contactForm"
-                className="single-form quate-form wow fadeInUp"
-                data-toggle="validator"
+                className={`single-form quate-form wow fadeInUp${formClass}`}
                 ref={form}
                 onSubmit={sendEmail}
               >
-                <div id="msgSubmit" className="h3 text-center hidden"></div>
+                {submitMessage && (
+                  <div id="msgSubmit" className={`h3 text-center${msgClass}`}>
+                    {submitMessage}
+                  </div>
+                )}
                 <div className="row">
                   <div className="col-sm-12">
                     <input
@@ -147,6 +150,7 @@ const ContactForm = () => {
                       type="text"
                       placeholder="First Name"
                       required
+                      onChange={(e) => setFirstName(e.target.value)}
                     />
                   </div>
 
@@ -158,6 +162,7 @@ const ContactForm = () => {
                       type="text"
                       placeholder="Last Name"
                       required
+                      onChange={(e) => setLastName(e.target.value)}
                     />
                   </div>
 
@@ -169,6 +174,7 @@ const ContactForm = () => {
                       type="email"
                       placeholder="Your Email"
                       required
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
 
@@ -180,6 +186,7 @@ const ContactForm = () => {
                       rows="6"
                       placeholder="Your Message"
                       required
+                      onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
                   </div>
 
