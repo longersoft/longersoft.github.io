@@ -29,7 +29,9 @@ const ContactForm = () => {
   };
 
   const sendEmail = (e) => {
+    console.log("sendEmail");
     e.preventDefault();
+    console.log("sendEmail2");
 
     emailjs
       .sendForm(
@@ -40,10 +42,12 @@ const ContactForm = () => {
       )
       .then(
         (result) => {
+          console.log("sendEmail2->then->result");
           console.log(result.text);
           formSuccess();
         },
         (error) => {
+          console.log("sendEmail2->then->error");
           console.log(error.text);
           formError();
           submitMSG(false, "Something went wrong, please try again!");
