@@ -5,10 +5,10 @@ const TopMenu = () => {
     <div className="container">
       <div className="row">
         <nav className="navbar navbar-expand-lg mh-nav nav-btn">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             <img
               src="/images/fedalon_logo.png"
-              alt="maha"
+              alt="logo"
               className="img-fluid"
             />
           </a>
@@ -26,7 +26,8 @@ const TopMenu = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-0 ml-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="#mh-home">
+                {/* #mh-home */}
+                <a className="nav-link" href="#mh-about">
                   Home
                 </a>
               </li>
@@ -40,26 +41,26 @@ const TopMenu = () => {
                   Skills
                 </a>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link" href="#mh-experience">
                   Experiences
                 </a>
-              </li>
-              <li className="nav-item">
+              </li> */}
+              {/* <li className="nav-item">
                 <a className="nav-link" href="#mh-portfolio">
                   Portfolio
                 </a>
-              </li>
-              <li className="nav-item">
+              </li> */}
+              {/* <li className="nav-item">
                 <a className="nav-link" href="#mh-pricing">
                   Pricing
                 </a>
-              </li>
-              <li className="nav-item">
+              </li> */}
+              {/* <li className="nav-item">
                 <a className="nav-link" href="#mh-blog">
                   Blog
                 </a>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <a className="nav-link" href="#mh-contact">
                   Contact
