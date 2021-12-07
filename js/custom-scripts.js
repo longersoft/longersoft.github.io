@@ -397,7 +397,7 @@
     var email = $("#user_email").val();
     var message = $("#message").val();
     $.ajax({
-      type: "POST",
+      type: "GET",
       url: "/api/sendmail",
       data: "name=" + name + "&email=" + email + "&message=" + message,
       success: function (data) {
