@@ -5,7 +5,7 @@ const ContactForm = () => {
   const form = useRef();
 
   const formSuccess = () => {
-    document.getElementById("create-course-form").reset();
+    $("#contactForm")[0].reset();
     submitMSG(true, "Message Sent!");
   };
   const formError = () => {
