@@ -388,12 +388,11 @@
       } else {
         // everything looks good!
         event.preventDefault();
-        submitForm();
+        // submitForm(); // stop using this
       }
     });
 
   function submitForm() {
-    return true; //stop use this
     var name = $("#user_name").val();
     var email = $("#user_email").val();
     var message = $("#message").val();
