@@ -27,7 +27,8 @@ wait
 # Replace static paths in html files
 for FILE in $(ls $WORK_DIR/*.html); do
   echo $FILE
-
+  
+  # sed -i '' 's,/_next/,http://localhost:8080/next/,g' $FILE
   sed -i '' 's,/_next/,https://raw.githubusercontent.com/longersoft/longersoft.github.io/master/next/,g' $FILE
 
   # OR:
