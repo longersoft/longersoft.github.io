@@ -161,7 +161,7 @@
 
   /* ---------- hero ---------- */
   .hero { position: relative; padding: 9.5rem 0 5rem; }
-  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3.2rem; align-items: center; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3.2rem; align-items: start; }
   .badge {
     display: inline-flex; align-items: center; gap: 0.55rem;
     border: 1px solid rgba(52, 211, 153, 0.35); background: rgba(52, 211, 153, 0.08);
@@ -184,6 +184,7 @@
   .role {
     font-family: var(--mono); font-size: clamp(1rem, 2.2vw, 1.2rem);
     color: var(--muted); margin: 0 0 1.4rem; display: flex; align-items: center; gap: 0.5rem; min-height: 1.9em;
+    white-space: nowrap;
   }
   .role .prompt { color: var(--green); }
   .role #rotator { color: #7dd3fc; }
@@ -238,9 +239,10 @@
   }
   .term-body {
     margin: 0; padding: 1.1rem 1.15rem 1.35rem; font-family: var(--mono);
-    font-size: 0.78rem; line-height: 1.75; min-height: 320px; white-space: pre-wrap; word-break: break-word;
+    font-size: 0.78rem; line-height: 1.75; height: 340px; overflow: hidden; white-space: pre-wrap; word-break: break-word;
     color: #cbd5e1;
   }
+  .term-body div { min-height: 1.75em; }
   .term-body .p { color: var(--green); }
   .term-body .c { color: #7dd3fc; }
   .term-body .o { color: #94a3b8; }
@@ -417,7 +419,7 @@
     .section { padding: 4.2rem 0; }
     .skills-grid { grid-template-columns: 1fr; }
     .facts { grid-template-columns: 1fr; }
-    .term-body { font-size: 0.72rem; min-height: 290px; }
+    .term-body { font-size: 0.72rem; height: 320px; }
     .brand small { display: none; }
     .hide-sm { display: none; }
   }
@@ -827,7 +829,6 @@
     if (reduce) {
       script.forEach(function (item) {
         term.appendChild(renderLine(item, item.text));
-        term.appendChild(document.createTextNode('\n'));
       });
     } else {
       var li = 0;
@@ -844,7 +845,6 @@
           var line = renderLine(item, '');
           line.style.minHeight = '1.75em';
           term.appendChild(line);
-          term.appendChild(document.createTextNode('\n'));
           var target = line.querySelector('.c'), i = 0;
           (function typeChar() {
             if (i <= item.text.length) {
@@ -856,7 +856,6 @@
         } else {
           setTimeout(function () {
             term.appendChild(renderLine(item));
-            term.appendChild(document.createTextNode('\n'));
             term.scrollTop = term.scrollHeight;
             playLine();
           }, 110);
