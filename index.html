@@ -324,23 +324,23 @@
     padding: 0.22rem 0.6rem; border-radius: 7px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.06);
   }
 
-  /* ---------- work ---------- */
-  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
-  .card {
-    position: relative; border-radius: var(--radius); border: 1px solid var(--line);
-    background: linear-gradient(170deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
-    padding: 1.6rem; overflow: hidden; transition: border-color 0.25s, transform 0.25s;
+  /* ---------- certifications ---------- */
+  .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
+  .cert-card {
+    display: flex; align-items: center; gap: 1rem; padding: 1.4rem;
+    background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
   }
-  .card:hover { border-color: rgba(167, 139, 250, 0.38); transform: translateY(-3px); }
-  .card .metric {
-    font-family: var(--mono); font-size: 0.72rem; color: var(--green);
-    display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 0.7rem;
+  .cert-mark {
+    flex: none; width: 52px; height: 52px; display: grid; place-items: center;
+    border-radius: 14px; background: rgba(34, 211, 238, 0.1);
+    border: 1px solid rgba(34, 211, 238, 0.22); color: var(--cyan);
+    font: 700 0.78rem var(--mono);
   }
-  .card .metric::before { content: "▲"; font-size: 0.6rem; }
-  .card h3 { margin: 0 0 0.55rem; font-size: 1.08rem; }
-  .card p { margin: 0 0 1.1rem; color: var(--muted); font-size: 0.92rem; }
-  .card .stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .card .stack span { font-family: var(--mono); font-size: 0.68rem; color: var(--cyan); }
+  .cert-card:nth-child(2) .cert-mark {
+    background: rgba(167, 139, 250, 0.1); border-color: rgba(167, 139, 250, 0.22); color: var(--violet);
+  }
+  .cert-card h3 { margin: 0 0 0.25rem; font-size: 1rem; }
+  .cert-card p { margin: 0; color: var(--muted); font-size: 0.84rem; }
 
   /* ---------- experience ---------- */
   .timeline { position: relative; margin-top: 0.5rem; padding-left: 1.9rem; }
@@ -403,8 +403,8 @@
     .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 2.6rem; }
     .hero { padding-top: 8rem; }
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .cert-grid { grid-template-columns: 1fr; }
     .stats { grid-template-columns: repeat(2, 1fr); }
-    .work-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 720px) {
     .nav-links {
@@ -449,8 +449,8 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#work">Work</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a class="nav-cta" href="/document/CV-LongVu.pdf" target="_blank" rel="noopener">Résumé</a></li>
     </ul>
@@ -467,14 +467,14 @@
           <h1>Hi, I'm <span class="grad">Long Vu</span></h1>
           <p class="role"><span class="prompt">$</span> <span id="rotator">DevOps Engineer</span><span class="caret" aria-hidden="true"></span></p>
           <p class="lede">
-            I turn messy infrastructure into a <strong>reliable, observable product</strong>.
-            8+ years designing cloud platforms, automating delivery pipelines and keeping
-            production calm — so teams can ship fast without fear.
+            DevOps and software engineering professional with <strong>18+ years in technology</strong>,
+            including around <strong>8 years in DevOps</strong>. I build secure cloud infrastructure
+            and automated delivery pipelines that help teams ship with confidence.
           </p>
           <div class="cta">
-            <a class="btn primary" href="#work">
+            <a class="btn primary" href="#experience">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7Z"/></svg>
-              Explore my work
+              View experience
             </a>
             <a class="btn ghost" href="/document/CV-LongVu.pdf" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
@@ -506,10 +506,10 @@
       </div>
 
       <div class="stats reveal">
-        <div class="stat"><b><em>8+</em></b><span>Years in DevOps &amp; cloud</span></div>
-        <div class="stat"><b><em>40+</em></b><span>Services in production</span></div>
-        <div class="stat"><b><em>99.9%</em></b><span>Platform uptime</span></div>
-        <div class="stat"><b><em>10×</em></b><span>Faster release cycles</span></div>
+        <div class="stat"><b><em>18+</em></b><span>Years in technology</span></div>
+        <div class="stat"><b><em>8+</em></b><span>Years in DevOps</span></div>
+        <div class="stat"><b><em>5</em></b><span>Countries collaborated with</span></div>
+        <div class="stat"><b><em>2</em></b><span>Cloud platforms · AWS &amp; Azure</span></div>
       </div>
     </div>
   </section>
@@ -522,21 +522,22 @@
           <div class="eyebrow reveal">About me</div>
           <h2 class="title reveal">Infrastructure is a product.<br />I build it like one.</h2>
           <p class="reveal">
-            I'm a DevOps engineer based in <strong>Ho Chi Minh City, Vietnam</strong>, with
-            <strong>8+ years</strong> of hands-on experience across startups and high-traffic
-            products. I started out on Linux and web stacks, then moved into containers,
-            cloud and platform engineering — and never looked back.
+            I'm a DevOps and software engineering professional based in <strong>Ho Chi Minh City,
+            Vietnam</strong>, with <strong>18+ years in technology</strong> and around
+            <strong>8 years focused on DevOps</strong>. My background spans banking and healthcare,
+            across product and outsourcing environments.
           </p>
           <p class="reveal">
-            Today I design <strong>self-service platforms</strong> that developers actually enjoy:
-            Kubernetes that scales without drama, Terraform you can review, pipelines that fail
-            fast and safely, and dashboards that answer questions before anyone asks them.
-            I care about developer experience, cost, and the 3 a.m. pager as much as shipping speed.
+            I build cloud infrastructure and technical architecture, automate delivery with
+            <strong>AWS, Azure, Terraform, CI/CD and Kubernetes</strong>, and improve security through
+            secrets management, image scanning and API security. I've led DevOps initiatives and
+            teams of up to eight, working with client teams in Japan, the Netherlands, the UK, the US
+            and Australia.
           </p>
           <ul class="facts reveal">
             <li><span class="k">Location</span><span class="v">Ho Chi Minh City, VN</span></li>
-            <li><span class="k">Experience</span><span class="v">8+ years</span></li>
-            <li><span class="k">Focus</span><span class="v">Platform · SRE · Cloud</span></li>
+            <li><span class="k">Experience</span><span class="v">18+ years in technology</span></li>
+            <li><span class="k">Focus</span><span class="v">DevOps · Cloud · Software</span></li>
             <li><span class="k">Timezone</span><span class="v">GMT+7 · remote friendly</span></li>
           </ul>
         </div>
@@ -554,8 +555,8 @@
 
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>Kubernetes</span><span>Terraform</span><span>AWS</span><span>Docker</span><span>Argo CD</span><span>GitHub Actions</span><span>Prometheus</span><span>Grafana</span><span>Helm</span><span>Ansible</span><span>Python</span><span>Go</span><span>Linux</span><span>Vault</span>
-          <span>Kubernetes</span><span>Terraform</span><span>AWS</span><span>Docker</span><span>Argo CD</span><span>GitHub Actions</span><span>Prometheus</span><span>Grafana</span><span>Helm</span><span>Ansible</span><span>Python</span><span>Go</span><span>Linux</span><span>Vault</span>
+          <span>Kubernetes</span><span>Terraform</span><span>AWS</span><span>Azure</span><span>Docker</span><span>Azure DevOps</span><span>Jenkins</span><span>GitLab CI</span><span>Prometheus</span><span>Grafana</span><span>Ansible</span><span>Python</span><span>Kafka</span><span>Linux</span>
+          <span>Kubernetes</span><span>Terraform</span><span>AWS</span><span>Azure</span><span>Docker</span><span>Azure DevOps</span><span>Jenkins</span><span>GitLab CI</span><span>Prometheus</span><span>Grafana</span><span>Ansible</span><span>Python</span><span>Kafka</span><span>Linux</span>
         </div>
       </div>
     </div>
@@ -572,68 +573,57 @@
         <article class="skill reveal">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .7-8.95A6 6 0 0 0 6.6 9.3 4.8 4.8 0 0 0 6 19h11.5Z"/></svg></div>
           <h3>Cloud platforms</h3>
-          <ul class="chips"><li>AWS</li><li>GCP</li><li>Azure</li><li>Linux</li><li>Networking</li><li>IAM</li></ul>
+          <ul class="chips"><li>AWS</li><li>Azure</li><li>GCP</li><li>Linux</li><li>Networking</li><li>CDN</li></ul>
         </article>
         <article class="skill reveal">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8.5 5v10L12 22l-8.5-5V7L12 2Z"/><path d="M12 12v10M12 12 20.5 7M12 12 3.5 7"/></svg></div>
           <h3>Containers &amp; orchestration</h3>
-          <ul class="chips"><li>Kubernetes</li><li>Docker</li><li>Helm</li><li>Kustomize</li><li>Istio</li><li>HPA / VPA</li></ul>
+          <ul class="chips"><li>Kubernetes</li><li>Docker</li><li>Rancher</li><li>AWS ECS</li><li>Helm</li><li>Kafka</li></ul>
         </article>
         <article class="skill reveal">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></div>
           <h3>Infrastructure as code</h3>
-          <ul class="chips"><li>Terraform</li><li>Ansible</li><li>Pulumi</li><li>Bash</li><li>Python</li><li>Go</li></ul>
+          <ul class="chips"><li>Terraform</li><li>Ansible</li><li>Puppet</li><li>Bash</li><li>Python</li><li>Go</li></ul>
         </article>
         <article class="skill reveal">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.5 6H13a2 2 0 0 1 2 2v2M8.5 18H13a2 2 0 0 0 2-2v-2"/></svg></div>
           <h3>CI/CD &amp; GitOps</h3>
-          <ul class="chips"><li>GitHub Actions</li><li>GitLab CI</li><li>Jenkins</li><li>Argo CD</li><li>Flux</li><li>Trunk-based</li></ul>
+          <ul class="chips"><li>Azure DevOps</li><li>Jenkins</li><li>GitLab CI</li><li>Travis CI</li><li>CircleCI</li><li>Bamboo</li><li>Git</li></ul>
         </article>
         <article class="skill reveal">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h4l3 7 4-16 3 9h4"/></svg></div>
           <h3>Observability &amp; SRE</h3>
-          <ul class="chips"><li>Prometheus</li><li>Grafana</li><li>Loki</li><li>OpenTelemetry</li><li>ELK</li><li>SLO / SLI</li></ul>
+          <ul class="chips"><li>DataDog</li><li>Prometheus</li><li>Grafana</li><li>Elasticsearch</li><li>Fluentd</li><li>Kibana</li><li>ScyllaDB</li><li>Couchbase</li></ul>
         </article>
         <article class="skill reveal">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.4 3.4 8.2 8 9 4.6-.8 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <h3>Security &amp; reliability</h3>
-          <ul class="chips"><li>Vault</li><li>Trivy</li><li>OPA / Kyverno</li><li>RBAC</li><li>Incident response</li><li>Cost control</li></ul>
+          <h3>Security &amp; architecture</h3>
+          <ul class="chips"><li>System security</li><li>Secrets management</li><li>Image scanning</li><li>API security</li><li>AWS KMS</li><li>Service mesh</li><li>Kong</li><li>Microservices</li></ul>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ================= WORK ================= -->
-  <section class="section" id="work">
+  <!-- ================= CERTIFICATIONS ================= -->
+  <section class="section" id="certifications">
     <div class="wrap">
-      <div class="eyebrow reveal">Selected work</div>
-      <h2 class="title reveal">Things I've built and shipped</h2>
-      <p class="sub reveal">A few highlights from eight years of keeping systems fast, cheap and boring.</p>
-
-      <div class="work-grid">
-        <article class="card reveal">
-          <div class="metric">99.99% uptime after migration</div>
-          <h3>Zero-downtime Kubernetes migration</h3>
-          <p>Moved a monolithic workload onto EKS with blue-green cutovers, autoscaling and cost guardrails — no customer-visible downtime, 35% lower compute spend.</p>
-          <div class="stack"><span>Kubernetes</span><span>Terraform</span><span>Helm</span><span>AWS</span></div>
+      <div class="eyebrow reveal">Certifications</div>
+      <h2 class="title reveal">Credentials</h2>
+      <p class="sub reveal">Recognized credentials in Kubernetes administration and AWS architecture.</p>
+      <div class="cert-grid">
+        <article class="cert-card reveal">
+          <div class="cert-mark" aria-hidden="true">CKA</div>
+          <div>
+            <h3>Certified Kubernetes Administrator</h3>
+            <p>CKA · CNCF / The Linux Foundation</p>
+          </div>
         </article>
-        <article class="card reveal">
-          <div class="metric">Deploy time: 45 min → 6 min</div>
-          <h3>GitOps delivery platform</h3>
-          <p>Replaced hand-run release scripts with a GitOps pipeline: PR previews, automated rollbacks, signed images and one-click environment promotion.</p>
-          <div class="stack"><span>Argo CD</span><span>GitHub Actions</span><span>Kustomize</span><span>Cosign</span></div>
-        </article>
-        <article class="card reveal">
-          <div class="metric">MTTR cut by 60%</div>
-          <h3>Observability from zero</h3>
-          <p>Introduced metrics, tracing and SLO dashboards across 40+ services, plus alert routing that wakes a human only when it truly matters.</p>
-          <div class="stack"><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>OpenTelemetry</span></div>
-        </article>
-        <article class="card reveal">
-          <div class="metric">Self-service for 30+ engineers</div>
-          <h3>Internal developer platform</h3>
-          <p>Golden-path templates and a self-service portal that spin up a service with CI, monitoring, secrets and on-call from a single form.</p>
-          <div class="stack"><span>Backstage</span><span>Terraform</span><span>Vault</span><span>Kyverno</span></div>
+        <article class="cert-card reveal">
+          <div class="cert-mark" aria-hidden="true">AWS</div>
+          <div>
+            <h3>AWS Certified Solutions Architect – Professional</h3>
+            <p>Amazon Web Services</p>
+          </div>
         </article>
       </div>
     </div>
@@ -643,41 +633,40 @@
   <section class="section" id="experience">
     <div class="wrap">
       <div class="eyebrow reveal">Career</div>
-      <h2 class="title reveal">The road so far</h2>
-      <p class="sub reveal">From Linux sysadmin habits to platform engineering at scale.</p>
-
-      <!-- TODO: replace the roles, companies and dates below with your real history -->
+      <h2 class="title reveal">Recent experience</h2>
+      <p class="sub reveal">A selected list of recent companies and roles.</p>
       <div class="timeline">
         <article class="job reveal">
-          <div class="when">2022 — Present</div>
-          <h3>Senior DevOps Engineer</h3>
-          <div class="where">Cloud platform team · product scale-up</div>
-          <ul>
-            <li>Own the Kubernetes platform serving 40+ microservices and 30+ engineers.</li>
-            <li>Led the GitOps migration, reducing deploy time from ~45 minutes to under 6.</li>
-            <li>Cut cloud spend ~30% through rightsizing, spot workloads and storage policies.</li>
-            <li>Set up SLOs, error budgets and a blameless incident review process.</li>
-          </ul>
+          <div class="when">July 2024 — Present</div>
+          <h3>Developer Engineer</h3>
+          <div class="where">NAB</div>
         </article>
         <article class="job reveal">
-          <div class="when">2019 — 2022</div>
+          <div class="when">August 2022 — September 2024</div>
           <h3>DevOps Engineer</h3>
-          <div class="where">Infrastructure &amp; reliability · e-commerce</div>
+          <div class="where">KMS Technology</div>
           <ul>
-            <li>Built CI/CD pipelines for 20+ services across AWS with Terraform-managed infra.</li>
-            <li>Automated blue-green and canary releases, cutting rollback time to minutes.</li>
-            <li>Hardened Linux hosts, centralized secrets and enforced least-privilege IAM.</li>
-            <li>Introduced centralised logging and alerting, lowering MTTR by 60%.</li>
+            <li>Managed application delivery pipelines across AWS and Azure.</li>
+            <li>Used Azure DevOps and Jenkins to automate build, test and deployment processes.</li>
+            <li>Deployed services on AWS ECS and managed cloud infrastructure.</li>
           </ul>
         </article>
         <article class="job reveal">
-          <div class="when">2018 — 2019</div>
-          <h3>Cloud &amp; Systems Engineer</h3>
-          <div class="where">Operations · web platforms</div>
+          <div class="when">February 2023 — December 2023</div>
+          <h3>DevOps Engineer · Freelancer</h3>
+          <div class="where">GFT Vietnam · Banking Foundation team</div>
           <ul>
-            <li>Migrated legacy VM workloads to cloud with automated provisioning.</li>
-            <li>Wrote Ansible playbooks and Python tooling for repeatable deployments.</li>
-            <li>Kept high-traffic sites fast and available through monitoring and tuning.</li>
+            <li>Provisioned infrastructure with Terraform and integrated it into CI/CD pipelines.</li>
+            <li>Supported infrastructure monitoring, optimization, security and compliance.</li>
+          </ul>
+        </article>
+        <article class="job reveal">
+          <div class="when">May 2021 — May 2022</div>
+          <h3>Technical Lead</h3>
+          <div class="where">NashTech</div>
+          <ul>
+            <li>Designed technical approaches for new requirements and maintained project architecture documentation.</li>
+            <li>Guided implementation quality, technical governance and team development.</li>
           </ul>
         </article>
       </div>
@@ -746,7 +735,7 @@
     onScroll();
 
     /* ---------- active nav link ---------- */
-    var sections = ['about', 'skills', 'work', 'experience', 'contact']
+    var sections = ['about', 'skills', 'experience', 'certifications', 'contact']
       .map(function (id) { return document.getElementById(id); });
     var navLinks = $$('#nav-links a[href^="#"]');
     if ('IntersectionObserver' in window) {
